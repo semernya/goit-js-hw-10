@@ -27,10 +27,9 @@ flatpickr('input[type=text]', {
       startBtn.disabled = false;
     } else {
       startBtn.disabled = true;
-      iziToast.show({
+      iziToast.error({
         message: 'Please choose a date in the future!',
       });
-      //   alert('Please choose a date in the future');
     }
     userSelectedDate = selectedDates[0];
   },
