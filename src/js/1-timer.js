@@ -27,6 +27,7 @@ flatpickr('input[type=text]', {
       startBtn.disabled = false;
     } else {
       startBtn.disabled = true;
+
       iziToast.error({
         message: 'Please choose a date in the future!',
       });
@@ -66,8 +67,9 @@ function onTimerStart() {
     const startDate = new Date();
     const countDown = selectedDate - startDate;
     startBtn.disabled = true;
+    input.disabled = true;
 
-    if (countDown < 0) {
+    if (countDown < 1000) {
       clearInterval(timerId);
       return;
     }
